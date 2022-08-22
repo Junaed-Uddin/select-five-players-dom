@@ -17,6 +17,8 @@ for (const player of players) {
         if (rowNumber <= 5) {
             tbody.appendChild(tr);
             targetClickEvent.setAttribute('disabled', true);
+            targetClickEvent.style.color = '#7e7c7c';
+            targetClickEvent.style.backgroundColor = '#cad4d4';
         }
         else {
             alert('You Already selected your best five');
