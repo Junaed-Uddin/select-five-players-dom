@@ -18,6 +18,9 @@ for (const player of players) {
             tbody.appendChild(tr);
             targetClickEvent.setAttribute('disabled', true);
         }
+        else {
+            alert('You Already selected your best five');
+        }
 
         // delete player 
         const deleteButtons = document.getElementsByClassName('delete-btn');
