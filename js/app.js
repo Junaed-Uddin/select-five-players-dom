@@ -1,8 +1,3 @@
-let count = 0;
-function getCountNumber() {
-    count++;
-    return count;
-}
 
 const players = document.querySelectorAll('.btn');
 for (const player of players) {
@@ -57,5 +52,13 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
         const totalPlayerCost = playerPerCost * playerCountValue;
         setElementValueById('player-expenses', totalPlayerCost);
     }
+});
+
+document.getElementById('calculate-total-btn').addEventListener('click', function () {
+    const totalPlayerExpense = parseFloat(document.getElementById('player-expenses').innerText);
+    const managerCost = getInputValueById('manager-cost');
+    const coachCost = getInputValueById('coach-cost');
+    const totalCost = totalPlayerExpense + managerCost + coachCost;
+    setElementValueById('total-all-cost', totalCost);
 })
 

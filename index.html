@@ -175,20 +175,20 @@
                                 </label>
                                 <label class="label">
                                     <span class="label-text text-base text-white">Manager:</span>
-                                    <input id="clothes-field" type="text" placeholder="Type here"
+                                    <input id="manager-cost" type="text" placeholder="Type here"
                                         class="input input-bordered w-2/3 ml-3 mt-2" />
                                 </label>
                                 <label class="label">
                                     <span class="label-text text-base text-white">Coach:</span>
-                                    <input id="clothes-field" type="text" placeholder="Type here"
+                                    <input id="coach-cost" type="text" placeholder="Type here"
                                         class="input input-bordered w-2/3 ml-3" />
                                 </label>
-                                <button id="calculate-btn"
+                                <button id="calculate-total-btn"
                                     class="px-3 py-2 text-center font-bold rounded-lg text-black bg-yellow-500 mt-4">Calculate
                                     Total</button>
                                 <label class="label mt-4">
                                     <span class="label-text text-base text-white">Total:</span>
-                                    <span>0</span>
+                                    <span id="total-all-cost">0</span>
                                 </label>
                             </div>
                         </div>
@@ -197,7 +197,8 @@
             </div>
         </section>
     </main>
-    <footer class="my-5 divide-white">
+    <hr class="border-x-2 border-white cursor-pointer mt-20"/>
+    <footer class="mt-10 mb-8 divide-white">
         <p class="text-center">Copyright @ 2022 All Rights Reserved.</p>
     </footer>
 
