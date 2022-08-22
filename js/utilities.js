@@ -5,6 +5,11 @@ function getInputValueById(inputId) {
         document.getElementById(inputId).value = '';
         return;
     }
+    else if (inputField < 0) {
+        alert('Input the positive Number');
+        document.getElementById(inputId).value = '';
+        return;
+    }
     else {
         return inputField;
     }

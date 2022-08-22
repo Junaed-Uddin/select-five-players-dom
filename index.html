@@ -6,26 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player Deals</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
-   
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        berkshireSwash: ['Berkshire Swash', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
     <!-- Carousel Start -->
     <header>
-        <div class="carousel w-100">
-            <div class="carousel-item w-full">
-                <img src="./images/bg-cover-1.png" class="w-full object-cover" alt="Burger" />
+        <div id="carouselExampleCaptions" class="carousel slide relative" data-bs-ride="carousel">
+            <div class="carousel-inner relative w-full overflow-hidden">
+                <div class="carousel-item active relative w-full">
+                    <img src="./images/bg-cover-1.png" class="block w-full object-cover" alt="..." />
+                    <div class="carousel-caption flex flex-col justify-center items-center absolute text-center h-full">
+                        <h5 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl text-amber-400 font-berkshireSwash">Choose Your Dream Players</h5>
+                        <p class="sm:text-base hidden sm:block mx-auto sm:w-3/4 md:text-md lg:text-xl mt-6 font-poppins">Five football experts, all renowned as great football
+                            analysts,</p>
+                        <p class="sm:text-base hidden sm:block mx-auto sm:w-3/4 md:text-md lg:text-xl mt-1 font-poppins">have chosen their top five players of the year for 2022.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
     <!-- Carousel End -->
 
     <main>
-        <section class="my-14 w-9/12 mx-auto">
-            <div class="flex justify-center gap-4">
-                <div class="grid grid-cols-3 gap-4 w-full">
+        <section class="mt-14 mb-4 p-3 lg:p-8 font-poppins">
+            <div class="sm:flex justify-center gap-2 lg:gap-4">
+                <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
                     <div class="card-compact w-full bg-black shadow-xl border border-1 h-max">
                         <figure><img src="./images/messi.jpg" class="w-100" alt="Shoes" /></figure>
                         <div class="card-body text-center text-white">
@@ -81,7 +107,7 @@
                     <div class="card-compact w-full bg-black shadow-xl border border-1 h-max">
                         <figure><img src="./images/salah.jpg" class="w-100" alt="Shoes" /></figure>
                         <div class="card-body text-center text-white">
-                            <h2 class="text-xl">Mohammed Salah</h2>
+                            <h2 class="text-xl">Mohamed Salah</h2>
                             <div class="flex justify-center mt-2">
                                 <p class="text-base">40 Goals</p>
                                 <p class="text-base">120 Assist</p>
@@ -144,12 +170,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-1/2 h-screen">
+                <div class="md:w-1/2 sm:h-screen mt-5 sm:mt-0">
                     <div class="card w-full bg-black text-primary-content overflow-y-auto">
-                        <div class="card-body p-5 mt-2">
+                        <div class="card-body p-2 sm:p-5 mt-2">
                             <h2 class="text-center text-xl">Selected Five</h2>
                             <div class="overflow-x-auto mt-2">
-                                <table class="table table-zebra w-full">
+                                <table class="table table-zebra table-normal w-full">
                                     <tbody id="selected-players">
                                     </tbody>
                                 </table>
@@ -197,8 +223,8 @@
             </div>
         </section>
     </main>
-    <hr class="border-x-2 border-white cursor-pointer mt-20"/>
-    <footer class="mt-10 mb-8 divide-white">
+    <hr class="border-x-2 border-white cursor-pointer sm:mt-20" />
+    <footer class="mt-6 sm:mt-10 mb-8">
         <p class="text-center">Copyright @ 2022 All Rights Reserved.</p>
     </footer>
     <script src="./js/utilities.js"></script>
