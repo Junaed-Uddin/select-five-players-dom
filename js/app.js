@@ -33,16 +33,6 @@ for (const player of players) {
     });
 }
 
-function getInputValueById(inputId) {
-    const inputField = parseFloat(document.getElementById(inputId).value);
-    return inputField;
-}
-
-function setElementValueById(elementId, newValue) {
-    const elementField = document.getElementById(elementId);
-    elementField.innerText = newValue;
-}
-
 document.getElementById('calculate-btn').addEventListener('click', function () {
     const playerPerCost = getInputValueById('player-cost');
     const playersCount = document.querySelectorAll('tr');
@@ -58,7 +48,18 @@ document.getElementById('calculate-total-btn').addEventListener('click', functio
     const totalPlayerExpense = parseFloat(document.getElementById('player-expenses').innerText);
     const managerCost = getInputValueById('manager-cost');
     const coachCost = getInputValueById('coach-cost');
+
+    if (isNaN(managerCost) || isNaN(coachCost)) {
+        alert('Insert the Valid Number');
+        ClearFields();
+        return;
+    }
+    else if (managerCost < 0 || coachCost < 0) {
+        alert('Insert the positive number');
+        ClearFields();
+        return;
+    }
+
     const totalCost = totalPlayerExpense + managerCost + coachCost;
     setElementValueById('total-all-cost', totalCost);
-})
-
+});
