@@ -34,7 +34,7 @@
         <div id="carouselExampleCaptions" class="carousel slide relative" data-bs-ride="carousel">
             <div class="carousel-inner relative w-full overflow-hidden">
                 <div class="carousel-item active relative w-full">
-                    <img src="./images/bg-cover-1.png" class="block w-full object-cover" alt="..." />
+                    <img src="./images/bg-cover-1.png" class="block w-full h-full object-right-top object-cover" alt="..." />
                     <div class="carousel-caption flex flex-col justify-center items-center absolute text-center h-full">
                         <h5 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl text-amber-400 font-berkshireSwash">Choose Your Dream Players</h5>
                         <p class="sm:text-base hidden sm:block mx-auto sm:w-3/4 md:text-md lg:text-xl mt-6 font-poppins">Five football experts, all renowned as great football
@@ -176,7 +176,7 @@
                             <h2 class="text-center text-xl">Selected Five</h2>
                             <div class="overflow-x-auto mt-2">
                                 <table class="table table-zebra table-normal w-full">
-                                    <tbody id="selected-players">
+                                    <tbody id="selected-players" class="text-center">
                                     </tbody>
                                 </table>
                             </div>
@@ -197,7 +197,7 @@
                                     class="px-3 py-2 text-center font-bold rounded-lg text-black bg-yellow-500 mt-4">Calculate</button>
                                 <label class="label mt-4">
                                     <span class="label-text text-base text-white">Player Expenses:</span>
-                                    <span id="player-expenses">0</span>
+                                    <span>$<span id="player-expenses">0</span></span>
                                 </label>
                                 <label class="label">
                                     <span class="label-text text-base text-white">Manager:</span>
@@ -214,7 +214,7 @@
                                     Total</button>
                                 <label class="label mt-4">
                                     <span class="label-text text-base text-white">Total:</span>
-                                    <span id="total-all-cost">0</span>
+                                    <span>$<span id="total-all-cost">0</span></span>
                                 </label>
                             </div>
                         </div>

@@ -26,6 +26,7 @@ for (const player of players) {
                 const deleteRow = event.target.parentNode.parentNode.remove(event.target);
                 if (deleteRow == undefined) {
                     targetClickEvent.removeAttribute('disabled');
+                    console.log(rowNumber);
                 }
             })
         }
@@ -35,13 +36,20 @@ for (const player of players) {
 
 document.getElementById('calculate-btn').addEventListener('click', function () {
     const playerPerCost = getInputValueById('player-cost');
+    
     const playersCount = document.querySelectorAll('tr');
     for (let i = 0; i < playersCount.length; i++) {
         const playerCount = playersCount[i];
-        const playerCountValue = playerCount.childNodes[1].innerText;
+        const playerCountValue = parseFloat(playerCount.childNodes[1].innerText);
         const totalPlayerCost = playerPerCost * playerCountValue;
-        setElementValueById('player-expenses', totalPlayerCost);
+        if (isNaN(totalPlayerCost)) {
+            return;
+        }
+        else {
+            setElementValueById('player-expenses', totalPlayerCost);
+        }
     }
+
 });
 
 document.getElementById('calculate-total-btn').addEventListener('click', function () {
@@ -52,14 +60,18 @@ document.getElementById('calculate-total-btn').addEventListener('click', functio
     if (isNaN(managerCost) || isNaN(coachCost)) {
         alert('Insert the Valid Number');
         ClearFields();
-        return;
+        return 0;
     }
     else if (managerCost < 0 || coachCost < 0) {
         alert('Insert the positive number');
         ClearFields();
         return;
     }
+    else {
+        const totalCost = totalPlayerExpense + managerCost + coachCost;
+        setElementValueById('total-all-cost', totalCost);
+    }
 
-    const totalCost = totalPlayerExpense + managerCost + coachCost;
-    setElementValueById('total-all-cost', totalCost);
 });
+
+
