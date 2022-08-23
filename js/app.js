@@ -59,7 +59,6 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 
 document.getElementById('calculate-total-btn').addEventListener('click', function () {
     const totalPlayerExpense = parseFloat(document.getElementById('player-expenses').innerText);
-    const perPlayerCost = parseFloat(document.getElementById('player-cost').value);
     const managerCost = getInputValueById('manager-cost');
     const coachCost = getInputValueById('coach-cost');
 
@@ -73,8 +72,8 @@ document.getElementById('calculate-total-btn').addEventListener('click', functio
         ClearFields();
         return;
     }
-    else if (isNaN(perPlayerCost)) {
-        alert('Per Player Cost is Empty');
+    else if (totalPlayerExpense == 0) {
+        alert('Total expense is 0. Add the player and calculate the player cost at first');
         ClearFields();
         return;
     }
