@@ -31,7 +31,8 @@ for (const player of players) {
                 const deleteRow = event.target.parentNode.parentNode.remove(event.target);
                 if (deleteRow == undefined) {
                     targetClickEvent.removeAttribute('disabled');
-                    console.log(rowNumber);
+                    targetClickEvent.style.backgroundColor = '#6419E6';
+                    targetClickEvent.style.color = 'white';
                 }
             })
         }
@@ -41,7 +42,6 @@ for (const player of players) {
 
 document.getElementById('calculate-btn').addEventListener('click', function () {
     const playerPerCost = getInputValueById('player-cost');
-    
     const playersCount = document.querySelectorAll('tr');
     for (let i = 0; i < playersCount.length; i++) {
         const playerCount = playersCount[i];
@@ -59,6 +59,7 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 
 document.getElementById('calculate-total-btn').addEventListener('click', function () {
     const totalPlayerExpense = parseFloat(document.getElementById('player-expenses').innerText);
+    const perPlayerCost = parseFloat(document.getElementById('player-cost').value);
     const managerCost = getInputValueById('manager-cost');
     const coachCost = getInputValueById('coach-cost');
 
@@ -72,7 +73,13 @@ document.getElementById('calculate-total-btn').addEventListener('click', functio
         ClearFields();
         return;
     }
+    else if (isNaN(perPlayerCost)) {
+        alert('Per Player Cost is Empty');
+        ClearFields();
+        return;
+    }
     else {
+        console.log(perPlayerCost);
         const totalCost = totalPlayerExpense + managerCost + coachCost;
         setElementValueById('total-all-cost', totalCost);
     }
