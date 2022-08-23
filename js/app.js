@@ -79,7 +79,6 @@ document.getElementById('calculate-total-btn').addEventListener('click', functio
         return;
     }
     else {
-        console.log(perPlayerCost);
         const totalCost = totalPlayerExpense + managerCost + coachCost;
         setElementValueById('total-all-cost', totalCost);
     }
